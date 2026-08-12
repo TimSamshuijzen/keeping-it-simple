@@ -2,6 +2,6 @@
 
 Skills for agents to keep it simple. 
 
-Small footprint in context window, high impact on behavior.
+Small footprint in context window, high impact on behavior and stability.
 
-Usage: Copy a skill from this repository, test it and edit it, and make it your own.
+Feel free to copy the skills, tailor them to suit your needs, and make them your own.
