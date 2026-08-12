@@ -1,2 +1,2 @@
 # keeping-it-simple
-Skills for AI/LLM agents to keep it simple. Minimize bloat in context window.
+Skills for agents to keep it simple. Small footprint in context window.
