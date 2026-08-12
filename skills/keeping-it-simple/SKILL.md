@@ -1,6 +1,6 @@
 ---
 name: keeping-it-simple
-description: Prefer the simplest solution that works, YAGNI, no speculative abstraction, no over-engineering. Use when making a design choice, or when writing or modifying code, or when asked to keep it simple.
+description: Prefer the simplest solution that works, YAGNI principles, no speculative abstraction, no over-engineering. Use when making a design choice, or when writing or modifying code, or when asked to keep it simple.
 ---
 
 # Keeping it simple
