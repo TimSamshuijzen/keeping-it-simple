@@ -5,9 +5,9 @@ description: Prefer the simplest solution that works, YAGNI, no speculative abst
 
 # Keeping it simple
 
-When making a design choice, or when writing or modifying code, you must choose or 
-write the smallest thing that solves the problem the user actually asked about.
-Solve the problem cleanly.
+When making a design choice, or when writing or modifying code, you will choose 
+or write the smallest thing that solves the problem the user actually asked about.
+In general, solve the problem cleanly.
 
 ## Guidelines
 
