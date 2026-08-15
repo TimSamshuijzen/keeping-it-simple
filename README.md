@@ -1,4 +1,4 @@
-# keeping-it-simple
+# skills
 
 Skills for agents to keep it simple. 
 
