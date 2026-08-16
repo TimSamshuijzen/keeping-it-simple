@@ -23,5 +23,5 @@ actually asked for. Solve the problem cleanly.
 5. **Delete rather than disable.** No commented-out code, no dead branches, 
    no unused code.
 6. **History does not matter, only current state.** Current set of 
-   requirements/design/implementation are what matters, no need for 
-   comments about historic requirements.
+   requirements/design/implementation are what matters, there are no comments 
+   in code about historic requirements.
