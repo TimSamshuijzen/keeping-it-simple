@@ -24,4 +24,4 @@ actually asked for. Solve the problem cleanly.
    no unused code.
 6. **History does not matter, only current state.** Current set of 
    requirements/design/implementation and consistency are what matters, there 
-   is no need for comments in code about historic requirements.
+   is no need for comments in this set about historic requirements.
