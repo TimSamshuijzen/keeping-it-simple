@@ -20,8 +20,5 @@ actually asked for. Solve the problem cleanly.
    direct call over an event bus.
 4. **Dependencies are deliberate.** Add a dependency only when it carries real, 
    non-trivial weight. Check the standard library first.
-5. **Delete rather than disable.** No commented-out code, no dead branches, 
-   no unused code.
-6. **History does not matter, only current state.** Current set of 
-   requirements/design/implementation and consistency are what matters, there 
-   is no need for comments in this set about historic requirements.
+5. **Delete rather than disable.** No commented-out code, no dead branches, no 
+   unused code, no comments about old/obsolete requirements.
