@@ -1,6 +1,6 @@
 ---
 name: requirements
-description: Requirements for this project.
+description: Requirements for this project. Used by the architect.
 ---
 
 # Requirements
@@ -8,12 +8,17 @@ description: Requirements for this project.
 This document contains the requirements for project "<project-name>".
 This document is input for creating the architecture and development plan.
 
-The architect owns this document.
+This document is created and maintained by the architect.
+
+
 
 ## High-level description of the solution to be developed
 
+This section contains a high-level summary of the solution to be developed.
 
 ## List of requirements
+
+
 
 | ID | Requirement | Description | Notes | Status |  |
 | --- | --- | --- | --- | --- | --- |
