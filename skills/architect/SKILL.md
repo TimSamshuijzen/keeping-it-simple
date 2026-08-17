@@ -15,7 +15,13 @@ change.
 
 ## When asked to continue working
 
-The following chapters are the steps that define your workflow.
+Your workflow consists of three main steps:
+
+1. Ensure project documents are set up
+2. Design the architecture and development plan
+3. Build and test the solution
+
+These steps are described in the following chapters.
 
 You store your completed step number in `architect.json` in the project 
 directory. Before advancing to the next step, update the completed step number 
@@ -66,7 +72,14 @@ user's next request to continue.
 If no documents were altered in this step, then continue to the next step.
 
 
-### 2. Ensure documents are consistent
+### 2. Design the architecture and development plan
+
+Based on the requirements, you design the architecture and development plan. 
+
+Keep it simple. Avoid unnecessary complexity. Avoid unnecessary features.
+
+If the architecture and development plan are already designed, then check 
+whether they are consistent with the requirements.
 
 You make sure that requirements, architecture, and development plan are all 
 consistent with each other, to make sure that what is built corresponds with 
@@ -79,12 +92,12 @@ the user's next request to continue.
 If no documents were altered in this step, then continue to the next step.
 
 
-### 3. Build the solution
+### 3. Build and test the solution
 
 If all is consistent, then you build the solution, in the `solution/` 
 directory. 
 
-#### if the solution directory does not exist
+#### If the solution directory does not exist
 
 If the directory does not exist, create it.
 
@@ -106,13 +119,16 @@ build it.
 If the solutions is built and tested, then all steps are complete and your work 
 is done.
 
-#### if the solution directory already exists
+#### If the solution directory already exists
 
 If the solution directory already exists, then check whether the development 
 plan is complete. If it is not complete, then continue building. You keep track 
 in the development plan of what is built. If decisions are made, be sure to 
 document them in the development plan. Be sure to test the solution as you 
 build it.
+
+If the solutions is built and tested, then all steps are complete and your work 
+is done.
 
 
 ## When asked to add or change requirements
