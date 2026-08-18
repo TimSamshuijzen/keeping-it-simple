@@ -5,5 +5,5 @@ description: Architecture of the solution for this project.
 
 # Architecture.
 
-The design and architecture of the solution.
+This document is the architecture of the solution.
 

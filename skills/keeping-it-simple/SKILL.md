@@ -21,4 +21,4 @@ actually asked for. Solve the problem cleanly.
 4. **Dependencies are deliberate.** Add a dependency only when it carries real, 
    non-trivial weight. Check the standard library first.
 5. **Delete rather than disable.** No commented-out code, no dead branches, no 
-   unused code, no comments about old/obsolete requirements.
+   unused code, no comments about obsolete requirements.
