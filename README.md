@@ -12,13 +12,17 @@ You can copy these skills to your own project.
 
 ## keeping-it-simple
 
-Add this skill to tell your agent to keep it simple.
+Tell your agent to keep it simple.
 
 
 ## architect
 
-Under construction.
+Warning: Under construction. Do not use.
 
-Warning: do no add this to your skills.
+
+
+
+
+
 
 

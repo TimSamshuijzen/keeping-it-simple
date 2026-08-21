@@ -1,9 +1,15 @@
 ---
 name: architecture
-description: Architecture of the solution for this project.
+description: Architecture of the product.
 ---
 
-# Architecture.
+# Document description
 
-This document is the architecture of the solution.
+This document provides a description of the architecture of the solution for 
+this product. Diagrams are in ascii or mermaid.
+
+# Architecture
+
+...
+
 
