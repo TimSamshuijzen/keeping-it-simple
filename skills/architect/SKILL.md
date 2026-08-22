@@ -110,6 +110,8 @@ docs/
   change-requests.md
 ```
 
+If the `docs/` directory does not exist, then create it.
+
 If a file in the `docs/` directory is missing, copy the corresponding file with 
 the same name (including frontmatter) from the `templates/` directory (relative 
 to the skill's directory), to the `docs/` directory.
