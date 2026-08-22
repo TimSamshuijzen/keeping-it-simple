@@ -124,7 +124,8 @@ Prerequisites:
 
 If no requirements are specified, ask the user to explain the main 
 requirements. Then translate the user requirements to requirements and add them 
-to the requirements table.
+to the requirements table, and set the state to `defined`. Ensure the added 
+requirements describe the test criteria and method for testing.
 
 Make sure you understand the requirements. If requirements are unclear, ask the 
 user for clarification and/or decisions.
@@ -216,6 +217,11 @@ before continuing.
 
 ## Step 5: Verify that the solution meets the requirements
 
+Prerequisites:
+- Read the requirements in `docs/requirements.md`.
+- Read the architecture in `docs/architecture.md`.
+- Read the implementation plan in `docs/implementation-plan.md`.
+
 For each requirement that has state `defined` or `fail`, verify whether the 
 solution meets the requirement's acceptance criteria.
 
@@ -227,7 +233,7 @@ solution meets the requirement's acceptance criteria.
 When one or more requirements fail to pass, then find out why these 
 requirements fail, make the necessary adjustments to the implementation plan 
 (and set the corresponding implementation steps' state to `defined`), set the 
-step number in `architect.json` back to 4, and wait for the next user request 
+step number in `architect.json` back to 3, and wait for the next user request 
 before continuing.
 
 When the state of all requirements is `pass`, set the step number in 
@@ -236,9 +242,13 @@ When the state of all requirements is `pass`, set the step number in
 
 ## Step 6: Solution complete - check for change requests
 
-In this step, the solution meets all specified requirements. 
+Prerequisites:
+- Read the requirements in `docs/requirements.md`.
+- Read the architecture in `docs/architecture.md`.
+- Read the implementation plan in `docs/implementation-plan.md`.
+- Read the change requests in `docs/change-requests.md`.
 
-Check if there are change requests in file `docs/change-requests.md`. 
+In this step, the solution meets all specified requirements. 
 
 If there are no change requests, you can stop and wait for the next user 
 request before continuing.
@@ -250,10 +260,10 @@ clarification and/or decisions.
 When the change requests are clear, then for each change request:
 - Set the state of the change request to `processing`.
 - Augment the requirements in `docs/requirements.md` to reflect the change 
-  request. A single change request can result in multiple new requirements, 
-  and/or changes in existing requirements.
-- Adjust the architecture and implementation plan where needed, to reflect the 
-  change request.
+  request, and set the corresponding states of the requirements to `defined`. A 
+  single change request can result in multiple new requirements, and/or changes 
+  in existing requirements.
+- Ensure the added requirements describe the test method and criteria.
 - Remove the change request.
 
 Keep doing this until all change requests are processed. 

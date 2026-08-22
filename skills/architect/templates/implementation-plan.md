@@ -31,7 +31,8 @@ state:
 
 The implementation plan table has these columns:
 - ID - Unique identifier of the implementation step. ID is a number with prefix 
-  "I".
+  "I". When an implementation step is added to an empty table, set the ID to 
+  "I1".
 - Implementation step name - Short descriptive name of the implementation step.
 - Implementation step description - Concise description of the implementation 
   step.
