@@ -27,7 +27,7 @@ A requirement has state. Explanation of a requirement's state:
 
 The requirements table has these columns:
 - ID - Unique identifier of the requirement. ID is a number with prefix "R". 
-  Used as reference for traceability in architecture and implementation plan.
+  Used as reference for traceability in the implementation plan.
 - Requirement name - Short descriptive name of the requirement.
 - Requirement description - Complete and concise description of the 
   requirement.
