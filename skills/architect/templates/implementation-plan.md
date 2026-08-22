@@ -23,11 +23,12 @@ state:
 - When adding an implementation step, set its state to `defined`.
 - The `defined` state indicates that the implementation step is not yet 
   implemented and/or tested.
-- When changing an implementation step's description or acceptance criteria, 
+- When changing an implementation step's description or test plan, 
   reset its state to `defined`.
-- When an implementation step is tested against its acceptance criteria, and 
-  the tests pass successfully, then set the implementation step's state to 
-  `pass`. If a test fails, then set the implementation step's state to `fail`.
+- When an implementation step is tested according to the test plan, and the 
+  test plan passes successfully, then set the implementation step's state to 
+  `pass`. If the test fails, then set the implementation step's state to 
+  `fail`.
 
 The implementation plan table has these columns:
 - ID - Unique identifier of the implementation step. ID is a number with prefix 
@@ -36,7 +37,7 @@ The implementation plan table has these columns:
 - Implementation step name - Short descriptive name of the implementation step.
 - Implementation step description - Concise description of the implementation 
   step.
-- Acceptance criteria - Criteria that the implementation step must satisfy.
+- Test plan - Method for testing this implementation step.
 - Implementation notes - Notes made during implementation.
 - Requirement IDs - IDs of requirements, to trace implementation steps to 
   requirements.
@@ -45,7 +46,7 @@ The implementation plan table has these columns:
 
 ## Implementation plan table
 
-| ID | Implementation step name | Implementation step description | Acceptance criteria | Implementation notes | Requirement IDs | State |
+| ID | Implementation step name | Implementation step description | Test plan | Implementation notes | Requirement IDs | State |
 | --- | --- | --- | --- | --- | --- | --- |
 
 

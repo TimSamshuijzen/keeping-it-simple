@@ -55,13 +55,11 @@ change request".
 When the user asks you to continue your work, then continue with your workflow. 
 Your workflow consists of these steps:
 
-- Step 0: Read settings and step number
-- Step 1: Check documents
-- Step 2: Understand requirements
-- Step 3: Design architecture and implementation plan
-- Step 4: Implement the solution according to the implementation plan
-- Step 5: Verify that the solution meets the requirements
-- Step 6: Solution complete - check for change requests
+- Step 0: Read settings and documents
+- Step 1: Design architecture and implementation plan
+- Step 2: Implement the solution according to the implementation plan
+- Step 3: Verify that the solution meets the requirements
+- Step 4: Solution complete - check for change requests
 
 The steps are defined in the sections below.
 
@@ -69,7 +67,7 @@ When starting a new session, you always read all the steps, and you always
 start with step 0.
 
 
-## Step 0: Read settings and step number
+## Step 0: Read settings and documents
 
 Read the `solution.json` file in the current working directory. If it does not 
 exist, then ask the user what is the name of the solution, and a short 
@@ -94,11 +92,6 @@ exist, then create it with initial content:
 You store your current workflow step number in `architect.json`. In this way, 
 if a session is reset, you can continue your work from where you left off.
 
-Next, go to the step number and continue from there.
-
-
-## Step 1: Check documents
-
 The requirements, architecture, implementation plan, and change requests are 
 stored in the 'docs/' directory in the current working directory:
 
@@ -116,13 +109,10 @@ If a file in the `docs/` directory is missing, copy the corresponding file with
 the same name (including frontmatter) from the `templates/` directory (relative 
 to the skill's directory), to the `docs/` directory.
 
-Next, set the step number in `architect.json` to 2, and continue from step 2.
-
-
-## Step 2: Understand requirements
-
-Prerequisites:
-- Read the requirements in `docs/requirements.md`.
+Next:
+- Read and understand the requirements in `docs/requirements.md`.
+- Read and understand the architecture in `docs/architecture.md`.
+- Read and understand the implementation plan in `docs/implementation-plan.md`.
 
 If no requirements are specified, ask the user to explain the main 
 requirements. Then translate the user requirements to requirements and add them 
@@ -132,14 +122,9 @@ requirements describe the test criteria and method for testing.
 Make sure you understand the requirements. If requirements are unclear, ask the 
 user for clarification and/or decisions.
 
-Next, set the step number in `architect.json` to 3, and wait for the next user 
-request before continuing.
+Next, go to the step number and continue from there.
 
-
-## Step 3: Design architecture and implementation plan
-
-Prerequisites:
-- Read the requirements in `docs/requirements.md`.
+## Step 1: Design architecture and implementation plan
 
 With the requirements in mind, you design the architecture and implementation 
 plan, with the skills of the development team in mind. If no skills of the 
@@ -170,11 +155,11 @@ If you encounter inconsistencies or lack of information, ask the user for
 clarification and/or decisions, and update the documents accordingly.
 
 When the implementation plan is complete and consistent with architecture and 
-requirements, then set the step number in `architect.json` to 4, and wait for 
+requirements, then set the step number in `architect.json` to 2, and wait for 
 the next user request before continuing.
 
 
-## Step 4: Implement the solution according to the implementation plan
+## Step 2: Implement the solution according to the implementation plan
 
 Prerequisites:
 - Read the requirements in `docs/requirements.md`.
@@ -197,32 +182,28 @@ reproducible, always leading to the same or similar solution.
 
 If the solution already exists, then continue implementing according to the 
 implementation plan. If the code already exists, then check whether it is
-complete and passes the tests as defined in the acceptance criteria of the 
-implementation steps.
+complete and passes the tests as defined in the test plan of the implementation 
+steps.
 
 For each implementation step that has its state set to `defined` or `fail`, 
-test against its acceptance criteria. If the tests pass successfully, then set 
-the implementation step's state to `pass`. If a test fails, then set the 
-implementation step's state to `fail`.
+test the implementation according to the test plan of the implementation 
+step. If the test passes successfully, then set the implementation step's 
+state to `pass`. If a test fails, then set the implementation step's state to 
+`fail`.
 
 Keep on implementing and testing and adjusting code until all implementation 
-steps pass. 
+steps pass.
 
 If an implementation step cannot be made to pass after reasonable attempts, 
-stop and ask the user.
+stop and ask the user what to do next.
 
 When the solution is fully built and tested according to the implementation 
 plan, i.e. when each implementation step has state equal to `pass`, then set 
-the step number in `architect.json` to 5, and wait for the next user request 
+the step number in `architect.json` to 3, and wait for the next user request 
 before continuing.
 
 
-## Step 5: Verify that the solution meets the requirements
-
-Prerequisites:
-- Read the requirements in `docs/requirements.md`.
-- Read the architecture in `docs/architecture.md`.
-- Read the implementation plan in `docs/implementation-plan.md`.
+## Step 3: Verify that the solution meets the requirements
 
 For each requirement that has state `defined` or `fail`, verify whether the 
 solution meets the requirement's acceptance criteria.
@@ -235,14 +216,14 @@ solution meets the requirement's acceptance criteria.
 When one or more requirements fail to pass, then find out why these 
 requirements fail, make the necessary adjustments to the implementation plan 
 (and set the corresponding implementation steps' state to `defined`), set the 
-step number in `architect.json` back to 3, and wait for the next user request 
+step number in `architect.json` back to 1, and wait for the next user request 
 before continuing.
 
 When the state of all requirements is `pass`, set the step number in 
-`architect.json` to 6, and wait for the next user request before continuing.
+`architect.json` to 4, and wait for the next user request before continuing.
 
 
-## Step 6: Solution complete - check for change requests
+## Step 4: Solution complete - check for change requests
 
 Prerequisites:
 - Read the requirements in `docs/requirements.md`.
@@ -272,5 +253,5 @@ Keep doing this until all change requests are processed.
 
 When all change requests are processed (i.e. no remaining change requests in 
 `docs/change-requests.md`), then set the step number in `architect.json` back 
-to 2, and wait for the next user request before continuing.
+to 1, and wait for the next user request before continuing.
 
