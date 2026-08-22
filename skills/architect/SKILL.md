@@ -45,8 +45,8 @@ solution/
 
 # Your workflow
 
-Your workflow is to design, plan, implement, and verify the solution from 
-scratch, to process change requests, and keeping everything consistent.
+Your main workflow is to design, plan, implement, and verify the solution from 
+scratch, to process change requests, and keep everything consistent.
 
 When the user asks or requests something specific, then pause your workflow and 
 focus on answering the question or request.
@@ -56,7 +56,8 @@ Your workflow consists of these steps:
 
 - Step 0: Read settings and documents
 - Step 1: Design architecture and implementation plan
-- Step 2: Implement the solution according to the implementation plan and verify that the solution meets the requirements
+- Step 2: Implement the solution according to the architecture and 
+  implementation plan and verify that the solution meets the requirements
 - Step 3: Solution complete - process change requests
 
 The steps are defined in the sections below.
@@ -115,7 +116,7 @@ Next:
 If no requirements are specified, ask the user to explain the main 
 requirements. Then translate the user requirements to requirements and add them 
 to the requirements table, and set the state to `defined`. Ensure the added 
-requirements describe the test criteria and method for testing.
+requirements describe the acceptance criteria.
 
 Make sure you understand the requirements. If requirements are unclear, ask the 
 user for clarification and/or decisions.
@@ -152,23 +153,23 @@ requirements, then set the step number in `architect.json` to 2, and wait for
 the next user request before continuing.
 
 
-## Step 2: Implement the solution according to the implementation plan and verify that the solution meets the requirements
+## Step 2: Implement the solution according to the architecture and implementation plan and verify that the solution meets the requirements
 
-In this step you implement the solution according to the implementation plan, 
-and verify that the solution meets the requirements. You implement the solution 
-in the `solution/` directory in the current working directory. If the 
-`solution/` directory does not exist, create it.
+In this step you implement the solution according to the architecture and 
+implementation plan, and verify that the solution meets the requirements. You 
+implement the solution in the `solution/` directory in the current working 
+directory. If the `solution/` directory does not exist, create it.
 
 The implementation plan contains the implementation steps for implementing the 
 solution.
 
 If, along the way of implementing the solution, you encounter issues or 
-decisions, or the actual implementation does not correspond with the steps in 
-the implementation plan, then update the implementation plan with the actual 
-steps you took to get it working (and reset the state of associated 
-requirements to `defined`). The implementation plan ensures that the 
-implementation is efficiently reproducible, always leading to the same or 
-similar solution.
+decisions, and/or the actual implementation differs from the architecture,
+and/or the actual implementation does not correspond with the steps in the 
+implementation plan, then update the architecture (if needed), and update the 
+implementation plan with the actual steps you took to get it working. The 
+architecture and the implementation plan ensures that the implementation is 
+efficiently reproducible, always leading to the same or similar solution.
 
 If the solution already exists, then continue implementing according to the 
 implementation plan. If the code for an implementation step already exists, 
@@ -185,32 +186,32 @@ pass.
 If an implementation step cannot be made to pass the associated requirements 
 after reasonable attempts, stop and ask the user what to do next.
 
-When the solution is fully built and verified (all requirements has state equal 
-to `pass`), then set the step number in `architect.json` to 3, and wait for the 
-next user request before continuing.
+When the solution is fully built and verified (all requirements have state 
+equal to `pass`), then set the step number in `architect.json` to 3, and wait 
+for the next user request before continuing.
 
 
-## Step 3: Solution complete - proces change requests
+## Step 3: Solution complete - process change requests
 
 In this step, the solution meets all specified requirements.
 
 Stop and ask the user what to do next.
 
 If the user provides a change request, then make sure you understand the change 
-request. If the change request is unclear, ask the user for clarification and/or 
-decisions.
+request. If the change request is unclear, ask the user for clarification 
+and/or decisions. When the change request is clear, then add the change request 
+to `docs/change-requests.md` and fill in the columns. 
 
-When the change request is clear, then:
-- Add the change request to `docs/change-requests.md` and fill in the columns. 
-- Set the state of the change request to `processing`.
-
-Then for each change request in the change request table:
+Read the change request file. For each change request in the change request 
+table:
 - Augment the requirements in `docs/requirements.md` to reflect the change 
-  request, and set the corresponding states of the requirements to `defined`. A 
-  single change request can result in multiple new requirements, and/or changes 
-  in existing requirements.
-- Ensure the added requirements describe the acceptance criteria.
-- Remove the change request.
+  request. A single change request can result in multiple new requirements, 
+  and/or changes in existing requirements.
+- Ensure that newly added requirements describe the acceptance criteria.
+- Remove the change request from the change request table.
 
+If a change request was processed, and if the requirements and/or 
+implementation plan is altered, then set the step number in `architect.json` to 
+1, and wait for the next user request before continuing.
 
-
+If nothing is altered, then ask the user what to do next.
