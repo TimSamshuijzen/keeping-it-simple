@@ -10,6 +10,5 @@ Diagrams are in ascii or mermaid format.
 
 # Architecture
 
-...
 
 
