@@ -17,12 +17,44 @@ Tell your agent to keep it simple.
 
 ## architect
 
-Warning: Under construction. Do not use.
+Let your agent act as the architect of a solution: it defines the requirements,
+designs the architecture, writes an implementation plan, builds the solution,
+and verifies it against the requirements.
 
+### How to use
 
+1. Create a new empty project directory.
+2. Copy `skills/architect/` into your project's skills directory.
+3. Start your agent in the project empty directory and address it as
+   "architect", for example: *"Architect, let's build a solution."*
+4. Answer its questions about the solution name and the main requirements.
+5. Say "continue" to let it proceed to the next step of its workflow.
 
+### Workflow
 
+The architect works in steps, and stores the current step in `architect.json`,
+so work continues where it left off after a session reset.
 
+### Files
 
+```
+solution.json           Solution name and description
+architect.json          Current workflow step
+docs/requirements.md    Requirements table (state: defined, pass, fail)
+docs/architecture.md    Architecture of the solution
+docs/implementation-plan.md  Implementation steps (state: planned, done)
+solution/               The solution that is built
+```
+
+The state columns in the tables are the record of progress, and give
+traceability from requirements to implementation steps.
+
+### Notes
+
+- Ask a question or make a request at any time. The architect pauses its
+  workflow, answers, and continues when you tell it to continue.
+- Default technology preference: Node.js for backend, single page HTML with
+  vanilla JavaScript for frontend. Tell the architect the skills of your
+  development team to change this.
 
 
