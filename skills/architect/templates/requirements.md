@@ -1,31 +1,41 @@
 ---
 name: requirements
-description: Requirements for the product.
+description: Requirements for the solution.
 ---
 
 # Document description
 
-This document:
-- contains the requirements for product "<product-name>".
-- is input for creating the architecture and development plan.
-- is created and maintained by the architect.
+This document contains the requirements for the solution. The requirements are 
+input for creating the architecture and implementation plan.
 
-## Requirements
 
-The table below lists the requirements for this product.
-When making changes to the table, make sure it remains consistent and parsable.
+# Requirements
 
-The table has these columns:
-- ID - Unique identifier of the requirement. Used as reference for traceability 
-  and validation.
+The requirements table (see table below) lists all the requirements for the 
+solution. When making changes to the table, make sure the table format remains 
+intact. The rows are sorted by ID.
+
+A requirement has state. Explanation of a requirement's state:
+- When a requirement is added, its state is set to `defined`.
+- The `defined` state indicates that the solution is not yet tested against the 
+  requirements.
+- When a requirement definition or acceptance criteria is changed, its state is 
+  reset to `defined`.
+- When a solution is tested against the acceptance criteria of a requirement, 
+  and the test passes successfully, then the requirement's state is set to 
+  `pass`. If the test fails, then the requirement's state is set to `fail`.
+
+The requirements table has these columns:
+- ID - Unique identifier of the requirement. ID is a number with prefix "R". 
+  Used as reference for traceability in architecture and implementation plan.
 - Requirement name - Short descriptive name of the requirement.
-- Requirement description - 
-- Acceptance criteria - List of 
+- Requirement description - Complete and concise description of the 
+  requirement.
+- Acceptance criteria - Criteria that the solution must satisfy.
 - Notes - Notes by the architect.
-- Status - `defined`, `develop`, `validate`, `complete`
+- State - `defined`, `pass`, `fail`
 
+## Requirements table
 
-| ID | Requirement name | Requirement description | Acceptance criteria | Architect notes | Status |
+| ID | Requirement name | Requirement description | Acceptance criteria | Notes | State |
 | --- | --- | --- | --- | --- | --- |
-| R1 |  |  |  |  |  |
-| R2 |  |  |  |  |  |
