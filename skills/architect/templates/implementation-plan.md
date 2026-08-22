@@ -21,6 +21,17 @@ The implementation plan table (see table below) lists all the implementation
 steps for implementing the solution. When making changes to the table, make 
 sure the table format remains intact. The rows are sorted by ID.
 
+An implementation step has state. Explanation of an implementation step's 
+state:
+- When an implementation step is added, its state is set to `planned`.
+- The `planned` state indicates that the step is not yet implemented, or that 
+  the implementation of the step is not yet complete.
+- When the step is implemented and works, set its state to `done`.
+- When the description of an implementation step is changed, reset its state to 
+  `planned`.
+- When an implementation step is blocked, keep its state at `planned` and write 
+  the problem in the Implementation notes column.
+
 The implementation plan table has these columns:
 - ID - Unique identifier of the implementation step. ID is a number with prefix 
   "I". When an implementation step is added to an empty table, set the ID to 
@@ -28,15 +39,17 @@ The implementation plan table has these columns:
 - Implementation step name - Short descriptive name of the implementation step.
 - Implementation step description - Concise description of the implementation 
   step.
-- Implementation notes - Notes made during implementation.
+- Implementation notes - Notes made during implementation: what you did, the 
+  decisions you made, and the problems you found. These notes make the 
+  implementation reproducible.
 - Requirement IDs - IDs of requirements, to trace implementation steps to 
   requirements.
+- State - `planned`, `done`
 
 
 ## Implementation plan table
 
-| ID | Implementation step name | Implementation step description | Implementation notes | Requirement IDs |
-| --- | --- | --- | --- | --- |
-
+| ID | Implementation step name | Implementation step description | Implementation notes | Requirement IDs | State |
+| --- | --- | --- | --- | --- | --- |
 
 

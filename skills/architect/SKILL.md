@@ -19,15 +19,14 @@ solution.json
 architect.json
 ```
 
-The requirements, architecture, implementation plan, and change-requests for the 
-solution are stored in the 'docs/' directory in the current working directory:
+The requirements, architecture, and implementation plan for the solution are 
+stored in the 'docs/' directory in the current working directory:
 
 ```
 docs/
   requirements.md
   architecture.md
   implementation-plan.md
-  change-requests.md
 ```
 
 You are the primary owner of these documents. In your workflow, you ensure 
@@ -70,7 +69,8 @@ start with step 0.
 
 Read the `solution.json` file in the current working directory. If it does not 
 exist, then ask the user what is the name of the solution, and a short 
-description. Then create the file with the initial content, and fill it in:
+description of what the solution is for. Then create the file with the initial 
+content, and fill it in:
 
 ```json
 {
@@ -78,6 +78,8 @@ description. Then create the file with the initial content, and fill it in:
   "solutionDescription": ""
 }
 ```
+
+Use the solution name for the name of the application (solution) to be built. 
 
 Read the `architect.json` file in the current working directory. If it does not 
 exist, then create it with initial content:
@@ -91,15 +93,14 @@ exist, then create it with initial content:
 You store your current workflow step number in `architect.json`. In this way, 
 if a session is reset, you can continue your work from where you left off.
 
-The requirements, architecture, implementation plan, and change requests are 
-stored in the 'docs/' directory in the current working directory:
+The requirements, architecture, and implementation plan are stored in the 
+'docs/' directory in the current working directory:
 
 ```
 docs/
   requirements.md
   architecture.md
   implementation-plan.md
-  change-requests.md
 ```
 
 If the `docs/` directory does not exist, then create it.
@@ -138,6 +139,10 @@ Store your architecture in `docs/architecture.md`.
 
 Store your implementation plan in `docs/implementation-plan.md`.
 
+When you add an implementation step, set its state to `planned`. When you 
+change the description of an implementation step, set its state back to 
+`planned`.
+
 If the architecture and implementation plan already exist, then check 
 whether they are still consistent with the requirements, and make adjustments 
 to the architecture and implementation plan where needed.
@@ -171,10 +176,16 @@ implementation plan with the actual steps you took to get it working. The
 architecture and the implementation plan ensures that the implementation is 
 efficiently reproducible, always leading to the same or similar solution.
 
-If the solution already exists, then continue implementing according to the 
-implementation plan. If the code for an implementation step already exists, 
-then check whether it is complete, works, and passes the acceptance criteria of 
-the associated requirements.
+Do the implementation steps in order of ID. Skip the implementation steps that 
+have state `done`. For each implementation step that has state `planned`:
+- Implement the step. If the code for the step already exists, then check 
+  whether it is complete and works.
+- Write in the Implementation notes column what you did, and the decisions you 
+  made. These notes make the implementation reproducible.
+- When the step is implemented and works, set its state to `done`.
+
+The state of the implementation steps is your record of progress. In this way, 
+if a session is reset, you continue the implementation from where you left off.
 
 For each requirement, verify whether the solution passes the acceptance 
 criteria. If it passes, then set the state of the requirements to `pass`. If it 
@@ -184,11 +195,13 @@ Keep on implementing and testing and adjusting code until all requirements
 pass.
 
 If an implementation step cannot be made to pass the associated requirements 
-after reasonable attempts, stop and ask the user what to do next.
+after reasonable attempts, then keep its state at `planned`, write the problem 
+in the Implementation notes column, and stop and ask the user what to do next.
 
-When the solution is fully built and verified (all requirements have state 
-equal to `pass`), then set the step number in `architect.json` to 3, and wait 
-for the next user request before continuing.
+When the solution is fully built and verified (all implementation steps have 
+state equal to `done`, and all requirements have state equal to `pass`), then 
+set the step number in `architect.json` to 3, and wait for the next user 
+request before continuing.
 
 
 ## Step 3: Solution complete - process change requests
@@ -198,20 +211,17 @@ In this step, the solution meets all specified requirements.
 Stop and ask the user what to do next.
 
 If the user provides a change request, then make sure you understand the change 
-request. If the change request is unclear, ask the user for clarification 
-and/or decisions. When the change request is clear, then add the change request 
-to `docs/change-requests.md` and fill in the columns. 
+request. A change request is a request for an addition to or a change in the 
+requirements. If the change request is unclear, ask the user for clarification 
+and/or decisions.
 
-Read the change request file. For each change request in the change request 
-table:
-- Augment the requirements in `docs/requirements.md` to reflect the change 
-  request. A single change request can result in multiple new requirements, 
-  and/or changes in existing requirements.
-- Ensure that newly added requirements describe the acceptance criteria.
-- Remove the change request from the change request table.
+When the change request is clear, then augment the requirements in 
+`docs/requirements.md` to reflect the change request:
+- A single change request can result in multiple new requirements, and/or 
+  changes in existing requirements.
+- Ensure that new and changed requirements state the acceptance criteria.
 
-If a change request was processed, and if the requirements and/or 
-implementation plan is altered, then set the step number in `architect.json` to 
-1, and wait for the next user request before continuing.
+If the requirements are altered, then set the step number in `architect.json` 
+to 1, and wait for the next user request before continuing.
 
 If nothing is altered, then ask the user what to do next.
